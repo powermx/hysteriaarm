@@ -13,7 +13,7 @@ ExecStartPost=ip6tbin -t nat -A PREROUTING -i iptb -p udp --dport 10000:65000 -j
 ExecStopPost=ip4tbin -t nat -D PREROUTING -i iptb -p udp --dport 10000:65000 -j DNAT --to-destination :36712
 ExecStopPost=ip6tbin -t nat -D PREROUTING -i iptb -p udp --dport 10000:65000 -j DNAT --to-destination :36712
 WorkingDirectory=instDir
-Environment="PATH=instDir/UDPMOD"
+Environment="PATH=instDir/hysteriaarm"
 ExecStart=instDir/UDPMOD/hysteria2-linux-arm64 -config instDir/hysteriaarm/config.json server
 
 [Install]
